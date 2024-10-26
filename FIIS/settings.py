@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-import os 
+import os # importando os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -128,10 +128,10 @@ MEDIA_URL = '/media-files/'
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 # Definir la URL para los archivos estáticos
-STATIC_URL = 'static/'
+STATIC_URL = 'static/' 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 if not DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
